@@ -1,12 +1,5 @@
 FROM php:5.6.39-fpm-alpine
 
-# docker-entrypoint.sh dependencies
-RUN apk add --no-cache \
-# in theory, docker-entrypoint.sh is POSIX-compliant, but priority is a working, consistent image
-		bash \
-# BusyBox sed is not sufficient for some of our sed expressions
-		sed
-
 # install the PHP extensions we need
 RUN set -ex; \
 	\
